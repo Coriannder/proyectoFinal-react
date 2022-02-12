@@ -12,17 +12,9 @@ function App() {
       <NavBar/>
     </header>
     
-    <ItemListContainer greeting = 'Catalogo' perro = 'guau guau'>
-      
-    </ItemListContainer>
-      
-   
-
+    <ItemListContainer greeting = 'Catalogo'/>
 
     </>
-
-    
-    
   )
 }
 
