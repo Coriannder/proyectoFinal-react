@@ -10,7 +10,6 @@ export const CartWidget = () => {
               <img src= {carritoImg} alt=""/>
             </div>
         </a>
-
         
     )
 }
