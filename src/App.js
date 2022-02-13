@@ -6,10 +6,17 @@ import {ItemListContainer} from './components/ItemListContainer/ItemListContaine
 function App() {
   return (
     <>
-      <header>
-        <NavBar/>
-      </header>
-      <ItemListContainer greeting = 'Catalogo'/>
+
+    <header>
+      <NavBar/>
+    </header>
+    
+        <ItemListContainer greeting = 'Catalogo'>
+
+            {/* <ItemCount mensaje={producto}/> */}
+        
+        </ItemListContainer>
+
 
     </>
   )

@@ -1,3 +1,4 @@
+
 import './ItemListContainer.scss'
 
 export const ItemListContainer = ({greeting}) =>{
@@ -5,5 +6,6 @@ export const ItemListContainer = ({greeting}) =>{
         <div className="forma">
            {greeting}
         </div>
+        
     )
 }

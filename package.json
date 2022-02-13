@@ -15,14 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-<<<<<<< HEAD
     "eject": "react-scripts eject",
     "build-css": "node-sass --include-path scss src/components/NavBar/NavBar.scss src/components/NavBar/NavBar.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
-=======
-    "eject": "react-scripts eject"
-    
->>>>>>> ramaDePrueba
   },
   "eslintConfig": {
     "extends": [
