@@ -1,0 +1,17 @@
+
+.itemCount__btnCantidad{
+    width: 30%;
+    background-color: transparent;
+    border: transparent;
+    &:hover{
+        background-color: black;
+        color: white;
+    }
+}
+
+.itemCount__btnCantidad--off{
+    width: 30%;
+    background-color: transparent;
+    border: transparent;
+}
+
