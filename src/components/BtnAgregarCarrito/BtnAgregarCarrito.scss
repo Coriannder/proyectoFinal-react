@@ -1,0 +1,12 @@
+.itemCount__btnAgregar{
+    width: 100%;
+    margin-top: 5px;
+    &:hover{
+        background-color: rgb(5, 199, 5);
+        color: white;
+    }
+}
+.itemCount__btnAgregar--off{
+    width: 100%;
+    margin-top: 5px;
+}

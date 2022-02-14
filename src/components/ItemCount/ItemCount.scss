@@ -1,5 +1,38 @@
+<<<<<<< HEAD
 .itemCount-container{
     width: 50%;
     height: 200px;
     background-color: blueviolet;
 }
+=======
+
+.itemCount__container{
+    width: 200px;
+    
+    height: 200px;
+    background-color: rgb(223, 219, 219);
+    border: solid 1px black;
+    border-radius: 8px;
+    padding: 5px;
+    color: black;
+}
+
+.itemCount__containerCantidad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 2px;
+    
+}
+
+.itemCount__producto{
+    height: 60%;
+}
+
+.itemCount__numero{
+    width: 30%;
+    
+}
+
+>>>>>>> ramaDePrueba
