@@ -8,17 +8,13 @@ function App() {
   return (
     <>
 
-    <header>
-      <NavBar/>
-    </header>
-    
-    <ItemListContainer greeting = 'Catalogo'>
-      <ItemCount stock='10' initial='0'></ItemCount>
-    </ItemListContainer>
-    
-  
+      <header>
+        <NavBar/>
+      </header>
 
-    </>
+      <ItemListContainer greeting = 'Catalogo'/>
+      
+      </>
   )
 }
 
