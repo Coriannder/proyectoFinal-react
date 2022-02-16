@@ -13,6 +13,9 @@ export const ItemCount = ({stock, initial})=>{
     const restar = ()=>{
         setCantidad(cantidad-1);
     }
+    const onAdd = ()=>{
+        console.log("Se sumo " +cantidad + " unidades del producto idProducto al carrito"  )
+    }
 
     return(
         <div className='itemCount__container'>
