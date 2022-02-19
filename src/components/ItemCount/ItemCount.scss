@@ -1,21 +1,14 @@
 
-.itemCount__container{
-    width: 200px;
-    
-    height: 200px;
-    background-color: rgb(223, 219, 219);
-    border: solid 1px black;
-    border-radius: 8px;
-    padding: 5px;
+.itemCount{
     color: black;
 }
 
-.itemCount__containerCantidad{
+.itemCount__cantidad{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid black;
-    border-radius: 2px;
+    
     
 }
 
@@ -24,13 +17,15 @@
 }
 
 .itemCount__numero{
-    width: 30%;
+    /* width: 30%; */
     
 }
 
 .itemCount__btnAgregar{
     width: 100%;
-    margin-top: 5px;
+    border: 1px solid black;
+    
+    
     &:hover{
         background-color: rgb(5, 199, 5);
         color: white;
@@ -38,7 +33,9 @@
 }
 .itemCount__btnAgregar--off{
     width: 100%;
-    margin-top: 5px;
+    border: 1px solid black;
+    
+    
 }
 
 
