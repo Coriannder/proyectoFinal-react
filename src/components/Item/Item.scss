@@ -1,0 +1,22 @@
+.item{
+    color: black;
+    border: solid 1px;
+    border-radius: 7px;
+    padding-top: 7px;
+    margin: 5px;
+}
+
+.item_img{
+    border-radius: 5%;
+    border: solid 1px black;
+}
+
+.item_title{
+    font-size: 16px;
+    overflow-wrap: normal;
+    max-width: 150px;
+    height: 40px;
+}
+.item_price{
+    font-size: 13px;
+}

@@ -1,9 +1,8 @@
 
-import './ItemCount.scss';
 import { useState } from 'react';
-import '../BtnCantidad/BtnCantidad'
-import { BtnCantidad } from '../BtnCantidad/BtnCantidad';
-import { BtnAgregarCarrito } from '../BtnAgregarCarrito/BtnAgregarCarrito';
+import './ItemCount.scss';
+
+
 
 export const ItemCount = ({stock, initial})=>{
     const [cantidad, setCantidad] = useState(Number(initial))
@@ -14,35 +13,39 @@ export const ItemCount = ({stock, initial})=>{
     const restar = ()=>{
         setCantidad(cantidad-1);
     }
-
-    let botonMas = '';
-    if(stock > cantidad){
-        botonMas = 'false'
-    }else{
-        botonMas = 'true'
-    }
-
-    let botonMenos;
-    if(cantidad < 1){
-        botonMenos = 'true';
-        
-    }else{
-        botonMenos = 'false'
-        
+    const onAdd = ()=>{
+        console.log("Se sumo " +cantidad + " unidades del producto idProducto al carrito"  )
     }
 
     return(
-        <div className='itemCount__container'>
-            <div className='itemCount__producto'>
+        <div className='itemCount'>
+            {/* <div className='itemCount__producto'>
                 producto
-            </div>
-            <div className='itemCount__containerCantidad'>
-                <BtnCantidad titulo="-" disabled={botonMenos} operacion={restar}/>
+            </div> */}
+            <div className='itemCount__cantidad'>
+
+                <button disabled={cantidad<=0} 
+                        type='button' 
+                        className={cantidad<=0? 'itemCount__btnCantidad--off' : 'itemCount__btnCantidad'} 
+                        onClick={restar}>-
+                </button>
+
                 <div className='itemCount__numero'>{cantidad}</div>
-                <BtnCantidad titulo="+" disabled={botonMas} operacion={sumar}/>
+
+                <button disabled={cantidad>=stock} 
+                        type='button' 
+                        className={cantidad>=stock? 'itemCount__btnCantidad--off' : 'itemCount__btnCantidad'} 
+                        onClick={sumar}>+
+                </button>
+                
             </div>
-            <BtnAgregarCarrito cantidadProducto={cantidad}/>
-            
+
+            <button disabled={cantidad<=0} 
+                    type='button' className={cantidad<=0? 'itemCount__btnAgregar--off': 'itemCount__btnAgregar'} 
+                    onClick={onAdd}>
+                        Agregar al Carrito
+            </button>
+
         </div>
     )
 }
