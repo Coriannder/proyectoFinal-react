@@ -36,9 +36,3 @@ export const Items = [
         pictureUrl:"https://picsum.photos/id/35/150/150",
     },
 ]
-
-/* export const getItems = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(Items);
-    }, 2000);
-}); */
