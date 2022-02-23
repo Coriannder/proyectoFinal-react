@@ -1,14 +1,8 @@
+import './ItemListContainer.scss'
 import { useState } from 'react'
 import { ItemList } from '../ItemList/ItemList'
-import './ItemListContainer.scss'
-import {Items} from './products'
+import {getItems} from './products'
 
-
-const getItems = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(Items);
-    }, 2000);
-});
 
 export const ItemListContainer = ({greeting}) =>{
 

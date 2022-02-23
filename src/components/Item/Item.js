@@ -1,7 +1,7 @@
 import './Item.scss'
 import { ItemCount } from '../ItemCount/ItemCount'
 
-export const Item = ({title, price, pictureUrl})=>{
+export const Item = ({title, precio, pictureUrl})=>{
 
     return(
         <div className='item'>
@@ -9,8 +9,8 @@ export const Item = ({title, price, pictureUrl})=>{
             <h3 className='item_title' >
                 {title}
             </h3>
-            <h4 className='item_price'>{price}</h4>
-            <ItemCount stock='10' initial='0'/>
+            <h4 className='item_price'>${precio}</h4>
+            
         </div>
     )
 }

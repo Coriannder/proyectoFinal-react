@@ -19,9 +19,7 @@ export const ItemCount = ({stock, initial})=>{
 
     return(
         <div className='itemCount'>
-            {/* <div className='itemCount__producto'>
-                producto
-            </div> */}
+            
             <div className='itemCount__cantidad'>
 
                 <button disabled={cantidad<=0} 

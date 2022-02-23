@@ -2,16 +2,19 @@
     color: black;
     border: solid 1px;
     border-radius: 7px;
-    padding-top: 7px;
+    padding: 7px;
     margin: 5px;
 }
 
 .item_img{
     border-radius: 5%;
     border: solid 1px black;
+    width: 150px;
+
 }
 
 .item_title{
+    padding-top: 10px;
     font-size: 16px;
     overflow-wrap: normal;
     max-width: 150px;
