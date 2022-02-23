@@ -11,13 +11,14 @@ export const ItemDetail = ({item})=>{
                 
                 <div className='col'>
 
-                <h3 className='itemDetail_title' >
-                    {item.title}
-                </h3>
-                <p className='itemDetail_price'>
-                    ${item.precio}
-                </p>
-                <ItemCount stock='10' initial='0'/>
+                    <p className='itemDetail_title'>
+                        {item.title}
+                    </p>
+                    
+                    <p className='itemDetail_price'>
+                        ${item.precio}
+                    </p>
+                    <ItemCount stock='10' initial='0'/>
 
                 </div>
 
