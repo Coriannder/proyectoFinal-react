@@ -1,34 +1,39 @@
 const Items = [
     {
-        id: 1, 
+        id: 1,
+        category: "torta", 
         title: "Torta de mandarinas", 
         precio: 1800, 
         pictureUrl: "https://picsum.photos/id/1080/500/500",
         descripcion: "Bizcocho de mandarinas relleno de curd de naranja y mandarina, cubierto con frosting de queso, decorado con merenguitos caseros, mandarinas confitadas y almendras."
     },  
     {
-        id: 3, 
+        id: 3,
+        category: "torta", 
         title: "Chocotorta bomba",  
         precio: 2200, 
         pictureUrl:"https://picsum.photos/id/1081/500/500",
         descripcion: "Bizcocho de chocolate super húmedo, relleno de frutos rojos con chantilly y crema de dulce de leche con pasta de maní y crocante de maní, cubierto con ganache de chocolate, decorado con crema, frutos rojos frescos y trufas de chocolate rellenas de frutos rojos."
     },
     {
-        id: 4, 
+        id: 4,
+        category: "torta", 
         title: "Carrot cake", 
         precio: 1800,
         pictureUrl:"https://picsum.photos/id/900/500/500", 
         descripcion: "Pastel de zanahorias y almendras aromatizado con canela, vainilla, jengibre y nuez moscada, relleno y cubierto con frosting de queso, decorado con zanahoria cruda rallada y crocante de almendras."
     },
     {
-        id: 5, 
+        id: 5,
+        category: "torta", 
         title: "Torta de frutilla y chocolate", 
         precio: 900,
         pictureUrl:"https://picsum.photos/id/25/500/500", 
         descripcion: "Masa sablée de chocolate, rellena de curd de naranja, cubierta con frutillas frescas, gajos de naranja a vivo y coco."
     },
     {
-        id: 6, 
+        id: 6,
+        category: "tarta", 
         title: "CheeseCake de arandanos",  
         precio: 1300,
         pictureUrl:"https://picsum.photos/id/2/500/500",
@@ -36,6 +41,7 @@ const Items = [
     },
     {
         id: 7,
+        category:"tarta",
         title: "Tarta de frutos rojos",  
         precio: 1300,
         pictureUrl:"https://picsum.photos/id/500/500/",
