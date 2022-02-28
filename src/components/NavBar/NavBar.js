@@ -4,13 +4,14 @@ import logo from "./img/logo.jpg"
 import { CartWidget } from "../CartWidget/CartWidget";
 import {NavLink} from 'react-router-dom'
 
-const NavBar = () =>{
-
+const NavBar = ({functionDeApp}) =>{ // funcion parametro para guardar en componente App
+                                     // las rutas del componente ItemListContainer
     return(
         <nav className="navbar fixed-top navbar-expand-md navbar-dark bg-dark header__colorBackground">
             <div id="barraNav" className="container-fluid">
 
               <NavLink to={`/`}
+                onClick = {()=>functionDeApp('/')} 
                 className="navbar-brand" href=""><img src={logo} 
                 alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
                   <h1>Isla Gourmet</h1>
@@ -23,12 +24,14 @@ const NavBar = () =>{
               
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <NavLink to={'category/torta'} className="nav-link">
+                    <NavLink onClick = {()=>functionDeApp('/category/torta')}
+                      to={'/category/torta'} className="nav-link">
                       Tortas
                     </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink to={'category/tarta'} className="nav-link" >
+                    <NavLink onClick = {()=>functionDeApp('/category/tarta')}
+                      to={'/category/tarta'} className="nav-link" >
                       Tartas
                     </NavLink>
                   </li>

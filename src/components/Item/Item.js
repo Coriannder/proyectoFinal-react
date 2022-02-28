@@ -4,6 +4,7 @@ import './Item.scss'
 
 export const Item = ({title, precio, pictureUrl, id})=>{
 
+
     return(
         <Link to={`/Item/${id}`} className='item'>
 

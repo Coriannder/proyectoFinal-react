@@ -6,4 +6,14 @@
     color: azure;
     font-size: larger;
     max-width: 700px;
+    position: relative;
+}
+
+.btn-cerrar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: transparent;
+    border-radius: 0;
+    z-index: 1000;
 }
