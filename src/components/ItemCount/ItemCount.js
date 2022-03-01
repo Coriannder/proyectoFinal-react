@@ -4,7 +4,8 @@ import './ItemCount.scss';
 
 
 
-export const ItemCount = ({stock, initial})=>{
+export const ItemCount = ({stock, initial, visible, onAdd})=>{
+
     const [cantidad, setCantidad] = useState(Number(initial))
 
     const sumar = ()=>{
@@ -13,12 +14,11 @@ export const ItemCount = ({stock, initial})=>{
     const restar = ()=>{
         setCantidad(cantidad-1);
     }
-    const onAdd = ()=>{
-        console.log("Se sumo " +cantidad + " unidades del producto idProducto al carrito"  )
-    }
+    
 
     return(
-        <div className='itemCount'>
+
+        <div className={visible===true? 'itemCount': 'itemCount--off' }>
             
             <div className='itemCount__cantidad'>
 
@@ -38,9 +38,9 @@ export const ItemCount = ({stock, initial})=>{
                 
             </div>
 
-            <button disabled={cantidad<=0} 
-                    type='button' className={cantidad<=0? 'itemCount__btnAgregar--off': 'itemCount__btnAgregar'} 
-                    onClick={onAdd}>
+            <button onClick={()=>onAdd({cantidad})}
+                    disabled={cantidad<=0} 
+                    type='button' className={cantidad<=0? 'itemCount__btnAgregar--off': 'itemCount__btnAgregar'}>
                         Agregar al Carrito
             </button>
 

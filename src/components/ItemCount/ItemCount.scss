@@ -3,6 +3,9 @@
     color: black;
     margin: 10px;
 
+    &--off{
+        display: none;
+    }
 }
 
 .itemCount__cantidad{

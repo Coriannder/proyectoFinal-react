@@ -13,7 +13,7 @@ export const ItemDetailContainer = ({ruta})=>{
     
     useEffect(()=>{
 
-        getItems.then(res => setItem(res.filter(item => item.id===Number(Id))[0]))
+        getItems.then(res => setItem(res.find(item => item.id===Number(Id))))
 
     },[Id])
 
@@ -23,9 +23,7 @@ export const ItemDetailContainer = ({ruta})=>{
 
             <NavLink to={ruta} type="button" className="btn btn-outline-dark btn-cerrar">X</NavLink>
             
-            <ItemDetail item={item}>
-                {item.id}
-            </ItemDetail>
+            <ItemDetail item={item}/>
         
         </div>
     )
