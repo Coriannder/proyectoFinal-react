@@ -1,29 +1,21 @@
 import './ItemDetail.scss'
 import { ItemCount } from '../ItemCount/ItemCount'
-import { useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { NavLink} from 'react-router-dom'
+import { CartContext } from '../../Context/CartContext'
 
 
 export const ItemDetail = ({item})=>{
     
-    const [itemCantidad, setItemCantidad] = useState(0)
     const [isItemCountVisible, setIsItemCountVisible] = useState(true)
+    const contextValue = useContext(CartContext);
 
-    
-    const guardarCantidad = (valor)=>{
 
-        setItemCantidad(valor.cantidad)
-        setIsItemCountVisible(false) 
+    const guardarCartItem = (valor)=>{
+
+        setIsItemCountVisible(false)
+        contextValue.addItem(item, valor.cantidad)
     }
-
-    useEffect(()=>{
-
-        console.log('cantidad',itemCantidad)
-        console.log('item', item.id )
-
-    },[itemCantidad])
-
-    
 
     return(
         <div className='itemDetail col'>
@@ -41,16 +33,18 @@ export const ItemDetail = ({item})=>{
                         ${item.precio}
                     </p>
 
-                    <ItemCount visible={isItemCountVisible} stock='10' initial='0' onAdd={(valor)=>guardarCantidad(valor)}/> 
-                    
-                    <NavLink to={'/cart'} style={{margin: '10px'}} 
-                        className={isItemCountVisible===true? 'notVisible':''}>
 
-                        <button className='itemDetail_btnTerminarCompra'>
-                            Finalizar mi Compra
-                        </button>
+                    {isItemCountVisible?
+                        <ItemCount stock='10' initial='0' onAdd={(valor)=>guardarCartItem(valor)}/>
+                        :
+                        <NavLink to={'/cart'} style={{margin: '10px'}}>
 
-                    </NavLink>
+                            <button className='itemDetail_btnTerminarCompra'>
+                                Finalizar mi Compra
+                            </button>
+
+                        </NavLink>
+                    }
 
                 </div>
 
@@ -60,8 +54,5 @@ export const ItemDetail = ({item})=>{
                 {item.descripcion}
             </p>
         </div>
-        
-    
     )
-
 }

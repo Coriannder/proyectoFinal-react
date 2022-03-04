@@ -1,15 +1,15 @@
 import './ItemDetailContainer.scss'
-import { useEffect, useState } from 'react';
+import {useEffect, useState } from 'react';
 import {getItems} from '../ItemListContainer/products'
 import { ItemDetail } from '../ItemDetail/ItemDetail';
-import {NavLink, useParams} from 'react-router-dom'
-
+import {useNavigate, useParams} from 'react-router-dom'
 
 
 export const ItemDetailContainer = ({ruta})=>{
 
     const {Id} = useParams()
     const [item, setItem] = useState([])
+    const navigate = useNavigate()
     
     useEffect(()=>{
 
@@ -21,8 +21,9 @@ export const ItemDetailContainer = ({ruta})=>{
 
         <div className='itemDetailContainer'>
 
-            <NavLink to={ruta} type="button" className="btn btn-outline-dark btn-cerrar">X</NavLink>
-            
+            <button type="button" className="btn btn-outline-dark btn-cerrar"
+            onClick={()=>navigate(-1)}>X</button>
+        
             <ItemDetail item={item}/>
         
         </div>

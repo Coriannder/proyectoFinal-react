@@ -1,10 +1,13 @@
-
-import { useState } from 'react';
 import './ItemCount.scss';
+import { useState} from 'react';
 
 
 
-export const ItemCount = ({stock, initial, visible, onAdd})=>{
+
+
+
+export const ItemCount = ({stock, initial, onAdd})=>{
+
 
     const [cantidad, setCantidad] = useState(Number(initial))
 
@@ -18,7 +21,7 @@ export const ItemCount = ({stock, initial, visible, onAdd})=>{
 
     return(
 
-        <div className={visible===true? 'itemCount': 'itemCount--off' }>
+        <div className='itemCount'>
             
             <div className='itemCount__cantidad'>
 
@@ -40,7 +43,8 @@ export const ItemCount = ({stock, initial, visible, onAdd})=>{
 
             <button onClick={()=>onAdd({cantidad})}
                     disabled={cantidad<=0} 
-                    type='button' className={cantidad<=0? 'itemCount__btnAgregar--off': 'itemCount__btnAgregar'}>
+                    type='button' className={cantidad<=0? 'itemCount__btnAgregar--off': 'itemCount__btnAgregar'}
+                    >
                         Agregar al Carrito
             </button>
 
