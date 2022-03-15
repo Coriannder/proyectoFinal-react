@@ -5,14 +5,16 @@ import { useState} from 'react';
 
 
 
-
 export const ItemCount = ({stock, initial, onAdd})=>{
 
 
     const [cantidad, setCantidad] = useState(Number(initial))
+    
 
     const sumar = ()=>{
         setCantidad(cantidad+1);
+        
+
     }
     const restar = ()=>{
         setCantidad(cantidad-1);

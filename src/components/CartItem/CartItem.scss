@@ -1,0 +1,32 @@
+
+.cartItem{
+    border: 2px solid gray;
+    border-radius: 2vh;
+    margin-bottom: 2%;
+    padding: 1%;
+    padding-left: 3%;
+    margin: 2% auto;
+    width: 93%;
+    background-color: white;
+    
+}
+
+.cartItem__imgContainer{
+    text-align: start;
+    padding: 0%;
+}
+
+.cartItem__title{
+    text-align: start;
+}
+
+
+.CartItem_img{
+    border-radius: 5%;
+    border: solid 1px black;
+    width: 50px;
+}
+
+.align{
+    margin: auto 0;
+}

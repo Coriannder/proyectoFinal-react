@@ -4,14 +4,12 @@ import logo from "./img/logo.jpg"
 import { CartWidget } from "../CartWidget/CartWidget";
 import {NavLink} from 'react-router-dom'
 
-const NavBar = ({functionDeApp}) =>{ // funcion parametro para guardar en componente App
-                                     // las rutas del componente ItemListContainer
+const NavBar = () =>{ 
     return(
         <nav className="navbar fixed-top navbar-expand-md navbar-dark bg-dark header__colorBackground">
             <div id="barraNav" className="container-fluid">
 
               <NavLink to={`/`}
-                onClick = {()=>functionDeApp('/')} 
                 className="navbar-brand" href=""><img src={logo} 
                 alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
                   <h1>Isla Gourmet</h1>
@@ -24,26 +22,17 @@ const NavBar = ({functionDeApp}) =>{ // funcion parametro para guardar en compon
               
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <NavLink onClick = {()=>functionDeApp('/category/torta')}
+                    <NavLink
                       to={'/category/torta'} className="nav-link">
                       Tortas
                     </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink onClick = {()=>functionDeApp('/category/tarta')}
+                    <NavLink
                       to={'/category/tarta'} className="nav-link" >
                       Tartas
                     </NavLink>
                   </li>
-                  {/* <li className="nav-item">
-                    <NavLink to={} className="nav-link" >Servicios</NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink to={} className="nav-link" >Galeria</NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink to={} className="nav-link" >Contacto</NavLink>
-                  </li> */}
                 </ul>
                 <CartWidget/>
                 

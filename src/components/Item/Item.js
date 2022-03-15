@@ -17,3 +17,5 @@ export const Item = ({title, precio, pictureUrl, id})=>{
         </Link>
     )
 }
+
+

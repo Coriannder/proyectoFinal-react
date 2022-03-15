@@ -14,7 +14,9 @@ export const ItemDetail = ({item})=>{
     const guardarCartItem = (valor)=>{
 
         setIsItemCountVisible(false)
+
         contextValue.addItem(item, valor.cantidad)
+        
     }
 
     return(
@@ -35,12 +37,12 @@ export const ItemDetail = ({item})=>{
 
 
                     {isItemCountVisible?
-                        <ItemCount stock='10' initial='0' onAdd={(valor)=>guardarCartItem(valor)}/>
+                        <ItemCount stock='10' initial='1' onAdd={(valor)=>guardarCartItem(valor)}/>
                         :
                         <NavLink to={'/cart'} style={{margin: '10px'}}>
 
                             <button className='itemDetail_btnTerminarCompra'>
-                                Finalizar mi Compra
+                                Ir al carrito
                             </button>
 
                         </NavLink>

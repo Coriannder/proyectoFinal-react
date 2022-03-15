@@ -5,7 +5,7 @@ import { ItemDetail } from '../ItemDetail/ItemDetail';
 import {useNavigate, useParams} from 'react-router-dom'
 
 
-export const ItemDetailContainer = ({ruta})=>{
+export const ItemDetailContainer = ()=>{
 
     const {Id} = useParams()
     const [item, setItem] = useState([])
