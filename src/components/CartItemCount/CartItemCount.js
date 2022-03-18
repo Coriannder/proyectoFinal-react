@@ -11,7 +11,7 @@ export const CartItemCount =({product})=>{
 
     const [cantidad, setCantidad] = useState(product.cantidad)
   
-    const [price, SetPrice] = useState(product.item.precio)
+    const [price, SetPrice] = useState(product.item.price * product.cantidad)
 
     const contextValue = useContext(CartContext)
     
@@ -19,12 +19,12 @@ export const CartItemCount =({product})=>{
     const sumar = ()=>{
 
         setCantidad(cantidad + 1);
-        SetPrice(product.item.precio * (cantidad + 1 ))
-        contextValue.upDateCantidad(product.item, 1)
+        SetPrice(product.item.price * (cantidad + 1 ))
+        contextValue.upDateCantidad(product.item, + 1)
         contextValue.setCantidadTotal(contextValue.cantidadTotal + 1)
-        contextValue.setTotal(contextValue.total + product.item.precio)
+        contextValue.setTotal(contextValue.total + product.item.price)
 
-        console.log('total', contextValue.total + product.item.precio)
+        console.log('total', contextValue.total + product.item.price)
         console.log('cantidadTotal', contextValue.cantidadTotal + 1)
 
     }
@@ -32,12 +32,12 @@ export const CartItemCount =({product})=>{
     const restar = ()=>{
 
         setCantidad(cantidad-1);
-        SetPrice(product.item.precio * (cantidad- 1))
-        contextValue.upDateCantidad(product.item, -1)
+        SetPrice(product.item.price * (cantidad - 1))
+        contextValue.upDateCantidad(product.item, - 1)
         contextValue.setCantidadTotal(contextValue.cantidadTotal - 1)
-        contextValue.setTotal(contextValue.total - product.item.precio)
+        contextValue.setTotal(contextValue.total - product.item.price)
 
-        console.log('total', contextValue.total - product.item.precio)
+        console.log('total', contextValue.total - product.item.price)
         console.log('cantidadTotal', contextValue.cantidadTotal - 1)
     }
 

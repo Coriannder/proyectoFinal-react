@@ -27,7 +27,7 @@ export const CartProvider = ({children})=>{
     const addItem = (item, cantidad) =>{
 
         setCantidadTotal(cantidadTotal + cantidad)
-        setTotal(total + item.precio * cantidad)
+        setTotal(total + item.price * cantidad)
         
         if(isInCartItems(item)){
             upDateCantidad(item, cantidad)
@@ -48,12 +48,12 @@ export const CartProvider = ({children})=>{
 
     useEffect(()=>{
         setCantidadTotal(cartItems.map(element=>element.cantidad).reduce((a,b)=> a + b, 0))
-        setTotal(cartItems.map(element => element.cantidad * element.item.precio).reduce((a,b)=> a + b, 0))
+        setTotal(cartItems.map(element => element.cantidad * element.item.price).reduce((a,b)=> a + b, 0))
 
         console.log('total', total)
         console.log('cantidadTotal', cantidadTotal)
 
-    },[cartItems])
+    },[])
 
 
     return(

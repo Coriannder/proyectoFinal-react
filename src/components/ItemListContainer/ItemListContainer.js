@@ -1,19 +1,44 @@
 import './ItemListContainer.scss'
 import { useEffect, useState } from 'react'
 import { ItemList } from '../ItemList/ItemList'
-import {getItems} from './products'
+/* import {getItems} from './products' */
 import { useParams } from 'react-router-dom'
+
+
+import { collection, getDocs, query, where } from 'firebase/firestore'
+
+import { db } from '../../utils/Firebase'
 
 
 export const ItemListContainer = ({greeting}) =>{
 
-    /* const [items, setItems]=useState([]) */
     const [itemsFiltrado, setItemsFiltrado]=useState([])
     const {categoryId} = useParams();
-    
+
+
+    const getData = async()=>{
+
+        let q;
+
+        categoryId !== undefined?
+            q = query(collection(db, 'items'), where('category', '==', categoryId))
+            :
+            q = collection(db, 'items');
+
+        const response = await getDocs(q);
+        console.log('response', response);
+        const data = response.docs.map(doc=>doc.data());
+        console.log('data', data);
+        setItemsFiltrado(data)
+    }
+
     useEffect(()=>{
 
-        getItems.then((res)=>{
+        getData()
+        console.log('categoryId', categoryId);
+
+
+        /* getItems.then((res)=>{
             
             if(categoryId !== undefined){
             
@@ -23,9 +48,11 @@ export const ItemListContainer = ({greeting}) =>{
             else{
                 setItemsFiltrado(res)
             }
-        })
+        }) */
 
     },[categoryId])
+
+    console.log('itemsFitemsFiltrado',itemsFiltrado);
 
     return(
         

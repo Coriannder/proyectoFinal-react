@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import './Item.scss'
 
 
-export const Item = ({title, precio, pictureUrl, id})=>{
+export const Item = ({title, price, pictureUrl, id})=>{
 
 
     return(
@@ -12,7 +12,7 @@ export const Item = ({title, precio, pictureUrl, id})=>{
             <h3 className='item_title' >
                 {title}
             </h3>
-            <h4 className='item_price'>${precio}</h4>
+            <h4 className='item_price'>${price}</h4>
             
         </Link>
     )

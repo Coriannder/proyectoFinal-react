@@ -32,7 +32,7 @@ export const ItemDetail = ({item})=>{
                     </p>
                     
                     <p className='itemDetail_price'>
-                        ${item.precio}
+                        ${item.price}
                     </p>
 
 
