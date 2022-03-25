@@ -1,14 +1,19 @@
 import './ItemDetail.scss'
 import { ItemCount } from '../ItemCount/ItemCount'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { NavLink} from 'react-router-dom'
 import { CartContext } from '../../Context/CartContext'
+
 
 
 export const ItemDetail = ({item})=>{
     
     const [isItemCountVisible, setIsItemCountVisible] = useState(true)
     const contextValue = useContext(CartContext);
+    
+
+    
+
 
 
     const guardarCartItem = (valor)=>{
@@ -37,7 +42,7 @@ export const ItemDetail = ({item})=>{
 
 
                     {isItemCountVisible?
-                        <ItemCount stock='10' initial='1' onAdd={(valor)=>guardarCartItem(valor)}/>
+                        <ItemCount stock={item.stock}  onAdd={(valor)=>guardarCartItem(valor)}/>
                         :
                         <NavLink to={'/cart'} style={{margin: '10px'}}>
 

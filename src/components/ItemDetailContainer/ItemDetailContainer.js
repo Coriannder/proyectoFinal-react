@@ -1,6 +1,5 @@
 import './ItemDetailContainer.scss'
 import {useEffect, useState } from 'react';
-import {getItems} from '../ItemListContainer/products'
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import {useNavigate, useParams} from 'react-router-dom'
 

@@ -10,9 +10,7 @@ import { CartContext } from '../../Context/CartContext'
 export const CartItemCount =({product})=>{
 
     const [cantidad, setCantidad] = useState(product.cantidad)
-  
     const [price, SetPrice] = useState(product.item.price * product.cantidad)
-
     const contextValue = useContext(CartContext)
     
 

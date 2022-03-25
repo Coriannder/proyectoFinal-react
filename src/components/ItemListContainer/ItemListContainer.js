@@ -1,12 +1,8 @@
 import './ItemListContainer.scss'
 import { useEffect, useState } from 'react'
 import { ItemList } from '../ItemList/ItemList'
-/* import {getItems} from './products' */
 import { useParams } from 'react-router-dom'
-
-
 import { collection, getDocs, query, where } from 'firebase/firestore'
-
 import { db } from '../../utils/Firebase'
 
 
@@ -16,7 +12,7 @@ export const ItemListContainer = ({greeting}) =>{
     const {categoryId} = useParams();
 
 
-    const getData = async()=>{
+    const getItems = async()=>{
 
         let q;
 
@@ -29,12 +25,13 @@ export const ItemListContainer = ({greeting}) =>{
         console.log('response', response);
         const data = response.docs.map(doc=>doc.data());
         console.log('data', data);
-        setItemsFiltrado(data)
+        return data
+        
     }
 
     useEffect(()=>{
 
-        getData()
+        getItems().then(res=>{setItemsFiltrado(res)})
         console.log('categoryId', categoryId);
 
 

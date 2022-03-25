@@ -1,24 +1,42 @@
 import './ItemCount.scss';
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 
 
 
 
 
-export const ItemCount = ({stock, initial, onAdd})=>{
+export const ItemCount = ({stock, onAdd})=>{
 
-
-    const [cantidad, setCantidad] = useState(Number(initial))
+    
+    const [cantidad, setCantidad] = useState()
     
 
     const sumar = ()=>{
         setCantidad(cantidad+1);
-        
 
     }
     const restar = ()=>{
         setCantidad(cantidad-1);
     }
+
+
+
+    console.log('stock', stock)
+
+
+
+    useEffect(()=>{    // Si no hay Stock, cantidad es igual a 0 y botones '+' y '-' quedan bloqueados
+               
+        stock === undefined 
+            ?
+            setCantidad(1)
+            :
+            setCantidad(stock > 1 ? 1 : 0)
+        
+        console.log(stock)
+    },[stock])
+
+   
     
 
     return(
@@ -49,6 +67,10 @@ export const ItemCount = ({stock, initial, onAdd})=>{
                     >
                         Agregar al Carrito
             </button>
+
+            {stock < 1 ? <p>sin stock</p> : ''}
+
+            
 
         </div>
     )

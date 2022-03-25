@@ -22,7 +22,7 @@ export const CartItem = ({cartProduct})=>{
             </div>
         
             <div className="col-4 align"  >
-                <CartItemCount product={cartProduct}z/>
+                <CartItemCount product={cartProduct}/>
             </div>
 
             

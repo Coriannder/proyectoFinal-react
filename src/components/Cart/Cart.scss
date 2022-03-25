@@ -1,6 +1,9 @@
 
-
 .cart{
+    width: 100vw;
+}
+
+.cart__resumen{
     text-align: center;
     width: 80vw;
     max-width: 900px;
@@ -31,9 +34,10 @@
 
 }
 
-
-
 .cart__btnContainer{
+
+    align-content: center;
+    justify-content: space-evenly;
     
     position: fixed;
     bottom: 0;
@@ -42,8 +46,8 @@
     height: 100px;
     background-color: bisque;
     margin: 0;
-}
 
+}
 
 .cart__button{
 
@@ -80,5 +84,5 @@
 
        
     }
-}
 
+}

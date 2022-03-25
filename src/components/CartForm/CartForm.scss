@@ -1,0 +1,24 @@
+
+
+.cart__containerForm{
+
+    max-width: 100vw !important;
+    position: absolute;
+    top: 0;
+    
+    height: 100%;
+    height: calc(100vh);
+    background-color: rgba(255, 166, 0, 0.192);
+}
+
+
+.cart__form{
+    position: absolute;
+    right: calc(50vw - 250px);
+    top: 25vh;
+    width: 80vw;
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 20px;
+    background-color: aquamarine;
+}
