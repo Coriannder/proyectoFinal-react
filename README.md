@@ -1,10 +1,13 @@
 # Isla Gourmet
 
-Este proyecto fue realizado en el marco del curso de React de [Coder House]{https://www.coderhouse.com/} 
+Este proyecto fue desarrollado en el marco de un curso de la biblioteca de javaScript [React](https://es.reactjs.org/) realizado en la 
+comunidad de aprendizaje online [Coder House](https://www.coderhouse.com/).
 
-# Getting Started with Create React App
+Se trata de una tienda virtual para hacer pedidos a una pasteleria
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](httpsl://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
