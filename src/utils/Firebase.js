@@ -26,8 +26,6 @@ export const generateOrder = async (order) => {
     ...order
 
   })
-  console.log('docRef', docRef.id)
-
   Swal.fire({
     icon: 'success',
     title: 'Felicitaciones',
@@ -36,7 +34,6 @@ export const generateOrder = async (order) => {
   }).then((result) => {
     if (result.value) {
       window.location.href = `/`
-      console.log('aqui')
     }
   });
 }
@@ -46,44 +43,11 @@ export const updateStock = async (cartItems) =>{
   const q = query(collection(db, 'items'), where('id', 'in', cartItems.map(i => i.item.id)))
   const response = await getDocs(q) 
   const itemsToUpdate = response.docs.map(i => i.id)
-  console.log('itemsToUpdate', itemsToUpdate)
 
    for(let i=0; i< itemsToUpdate.length; i++ ){
-
     const item = await getDoc(doc(db, 'items', itemsToUpdate[i]))
     await updateDoc(doc(db, 'items', itemsToUpdate[i]),{
-
       stock: item.data().stock - cartItems[i].cantidad
     })
   }
-
-  
-
-
-
-
-  
 }
-
-
-  
-
-
-  
-
-
-    
-
-  
-    /* const q = query(collection(db, 'items'), where('id', '==', order.cartItems))
-       
-
-    const response = await getDocs(q);
-    console.log('response', response);
-    const data = response.docs.map(doc=>doc.data());
-    console.log('data', data);
-    return data */
-    
-
-
-

@@ -19,12 +19,6 @@ export const ItemCount = ({stock, onAdd})=>{
         setCantidad(cantidad-1);
     }
 
-
-
-    console.log('stock', stock)
-
-
-
     useEffect(()=>{    // Si no hay Stock, cantidad es igual a 0 y botones '+' y '-' quedan bloqueados
                
         stock === undefined 
@@ -32,17 +26,13 @@ export const ItemCount = ({stock, onAdd})=>{
             setCantidad(1)
             :
             setCantidad(stock > 1 ? 1 : 0)
-        
-        console.log(stock)
+
     },[stock])
 
    
-    
-
     return(
-
-        <div className='itemCount'>
-            
+        <div className='itemCount'> 
+        
             <div className='itemCount__cantidad'>
 
                 <button disabled={cantidad<=0} 

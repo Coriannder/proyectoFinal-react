@@ -3,14 +3,11 @@ import { useEffect } from "react";
 
 
 export const CartContext = React.createContext();
-
-
 export const CartProvider = ({children})=>{
 
     const [total, setTotal] = useState(0)
     const [cantidadTotal, setCantidadTotal] = useState(0)
     const [cartItems, setCartItems] = useState([])
-
 
     const isInCartItems = (producto)=>{
         return cartItems.some(element=>element.item.id===producto.id)
@@ -32,8 +29,6 @@ export const CartProvider = ({children})=>{
         }else{
             setCartItems([...cartItems, {item, cantidad}])
         }
-        
-        
     }
 
     const removeItem = (id)=>{                // Remover un item del carrito
@@ -49,10 +44,6 @@ export const CartProvider = ({children})=>{
     useEffect(()=>{
         setCantidadTotal(cartItems.map(element=>element.cantidad).reduce((a,b)=> a + b, 0))  // CAntidad total de items del carrito
         setTotal(cartItems.map(element => element.cantidad * element.item.price).reduce((a,b)=> a + b, 0)) // Precio total del carrito
-
-        console.log('total', total)
-        console.log('cantidadTotal', cantidadTotal)
-
     },[])
 
 

@@ -8,23 +8,24 @@
     margin: 2% auto;
     width: 93%;
     background-color: white;
-    
-}
+    align-items: center;
 
-.cartItem__imgContainer{
-    text-align: start;
-    padding: 0%;
-}
-
-.cartItem__title{
-    text-align: start;
-}
+    &__imgContainer{
+        text-align: start;
+        padding: 0%;
+        margin: auto;
+    }
 
 
-.CartItem_img{
-    border-radius: 5%;
-    border: solid 1px black;
-    width: 50px;
+    &__title{
+        text-align: start;
+    }
+
+    &__img{
+        border-radius: 5%;
+        border: solid 1px black;
+        width: 50px;
+    }
 }
 
 .align{

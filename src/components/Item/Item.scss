@@ -4,23 +4,23 @@
     border-radius: 7px;
     padding: 7px;
     margin: 7px;
+
+    &__img{
+        border-radius: 5%;
+        border: solid 1px black;
+        width: 150px;
     
-}
+    }
 
-.item_img{
-    border-radius: 5%;
-    border: solid 1px black;
-    width: 150px;
+    &__title{
+        padding-top: 10px;
+        font-size: 16px;
+        overflow-wrap: normal;
+        max-width: 150px;
+        height: 50px;
+    }
 
-}
-
-.item_title{
-    padding-top: 10px;
-    font-size: 16px;
-    overflow-wrap: normal;
-    max-width: 150px;
-    height: 40px;
-}
-.item_price{
-    font-size: 13px;
+    &__price{
+        font-size: 18px;
+    }
 }

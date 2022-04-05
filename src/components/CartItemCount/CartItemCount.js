@@ -2,7 +2,7 @@
 
 import { useState, useContext} from 'react';
 import "./CartItemCount.scss"
-import deleteIcon from './img/deleteIcon.png.png'
+import deleteIcon from './img/deleteIcon.png'
 import { CartContext } from '../../Context/CartContext'
 
 
@@ -21,10 +21,6 @@ export const CartItemCount =({product})=>{
         contextValue.upDateCantidad(product.item, + 1)
         contextValue.setCantidadTotal(contextValue.cantidadTotal + 1)
         contextValue.setTotal(contextValue.total + product.item.price)
-
-        console.log('total', contextValue.total + product.item.price)
-        console.log('cantidadTotal', contextValue.cantidadTotal + 1)
-
     }
 
     const restar = ()=>{
@@ -34,23 +30,19 @@ export const CartItemCount =({product})=>{
         contextValue.upDateCantidad(product.item, - 1)
         contextValue.setCantidadTotal(contextValue.cantidadTotal - 1)
         contextValue.setTotal(contextValue.total - product.item.price)
-
-        console.log('total', contextValue.total - product.item.price)
-        console.log('cantidadTotal', contextValue.cantidadTotal - 1)
     }
 
-    
 
     return(
         <div className='row '>
 
             <div className='col-6 '>
-                <div className='row CartItemCount__btnContainer'>
+                <div className='row cartItemCount__btnContainer'>
 
                     <button className='col-4 cartItemCount__button' onClick={cantidad>0 ? restar : contextValue.removeItem(product.item.id) }>
                         {cantidad<2
                             ?
-                            <img src={deleteIcon} alt='Delete Button' className='cartItemCount_delete'/>
+                            <img src={deleteIcon} alt='Delete Button' className='cartItemCount__delete'/>
                             :
                             '-'
                         }

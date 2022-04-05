@@ -11,56 +11,26 @@ export const ItemListContainer = ({greeting}) =>{
     const [itemsFiltrado, setItemsFiltrado]=useState([])
     const {categoryId} = useParams();
 
-
-    const getItems = async()=>{
-
-        let q;
-
-        categoryId !== undefined?
-            q = query(collection(db, 'items'), where('category', '==', categoryId))
-            :
-            q = collection(db, 'items');
-
-        const response = await getDocs(q);
-        console.log('response', response);
-        const data = response.docs.map(doc=>doc.data());
-        console.log('data', data);
-        return data
-        
-    }
-
     useEffect(()=>{
-
+        const getItems = async()=>{
+            let q;
+            categoryId !== undefined?
+                q = query(collection(db, 'items'), where('category', '==', categoryId))
+                :
+                q = collection(db, 'items');
+            const response = await getDocs(q);
+            const data = response.docs.map(doc=>doc.data());
+            return data
+        }
         getItems().then(res=>{setItemsFiltrado(res)})
-        console.log('categoryId', categoryId);
-
-
-        /* getItems.then((res)=>{
-            
-            if(categoryId !== undefined){
-            
-                const itemsAuxiliar = res.filter(item=>item.category === categoryId)
-                setItemsFiltrado(itemsAuxiliar)
-            }
-            else{
-                setItemsFiltrado(res)
-            }
-        }) */
-
     },[categoryId])
 
-    console.log('itemsFitemsFiltrado',itemsFiltrado);
-
     return(
-        
         <div className='itemListContainer'>
-                <div className='itemListContainer_titulo'>
+                <div className='itemListContainer__titulo'>
                     {greeting}
                 </div>
-                <ItemList items={itemsFiltrado}/>
-                
+                <ItemList items={itemsFiltrado}/>       
         </div>
-        
     )
-
 }

@@ -1,12 +1,12 @@
 import { Timestamp } from 'firebase/firestore'
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 import Swal from 'sweetalert2'
 
 import { generateOrder, updateStock } from '../../utils/Firebase'
 import './CartForm.scss'
 
 
-export const CartForm = ({contextValue, isDisplayVisible, setIsDisplayVisible})=>{
+export const CartForm = ({contextValue, isDisplayVisible})=>{
 
     const initialBuyer = {
         name: '',
@@ -17,20 +17,14 @@ export const CartForm = ({contextValue, isDisplayVisible, setIsDisplayVisible})=
     
     const [buyer, setBuyer] = useState(initialBuyer)
     const [cartItems] = useState(contextValue.cartItems)
-    const [total, setTotal] = useState(contextValue.total)
-    const [isOrderSet, setIsOrderSet] = useState(false)
+    const [total] = useState(contextValue.total)
     
-    
-
     const handlerSubmit = (e) => {
 
-
         e.preventDefault()
-        console.log('submit')
-        console.log(contextValue.cartItems)
         if(buyer.name !== "" && buyer.lastName !== "" && buyer.email !== "" && buyer.phone !== ""){  // Verifica que los campos no esten vacios
 
-            const order = {buyer, /* contextValue.cartItems, contextValue.total, (Por que no puedo hacerlo asi?) */ cartItems, total,  date: Timestamp.fromDate(new Date())}
+            const order = {buyer, cartItems, total,  date: Timestamp.fromDate(new Date())}
             generateOrder(order).then(result =>{
                 contextValue.clear()
                 updateStock(cartItems)
@@ -59,16 +53,11 @@ export const CartForm = ({contextValue, isDisplayVisible, setIsDisplayVisible})=
         setBuyer({...buyer, [e.target.name] : e.target.value})
     }
 
-
-    useEffect(() => {
-        console.log('buyer', buyer);
-    }, [buyer])
-
     return(
-        
-        <div className="container cart__containerForm" style={{display: isDisplayVisible? 'block':'none' }}>
+    
+        <div className="container cartForm__container" style={{display: isDisplayVisible? 'block':'none' }}>
 
-                <form className="cart__form">
+                <form className="cartForm">
 
                     <p>Para terminar tu compra ingresa tus datos</p>
 
@@ -91,6 +80,6 @@ export const CartForm = ({contextValue, isDisplayVisible, setIsDisplayVisible})=
                     <button type="submit" className="btn btn-primary" onClick={handlerSubmit}>Comprar</button>
                 </form>
 
-            </div>
+        </div>
     )
 }

@@ -4,16 +4,24 @@
     background-color: white;
     box-shadow: 1px 1px 20px 10px gray;
     color: azure;
-    font-size: larger;
+    font-size: 16 px;
     max-width: 700px;
     position: relative;
+
+    &__btnCerrar{
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: transparent;
+        border-radius: 0;
+        z-index: 1000;
+    }
 }
 
-.btn-cerrar{
-    position: absolute;
-    right: 0;
-    top: 0;
-    border: transparent;
-    border-radius: 0;
-    z-index: 1000;
+@media (max-width: 800px) {
+
+    .itemDetailContainer{
+        margin: 58px auto auto auto;
+        height: calc(100vh - 58px);
+    }
 }

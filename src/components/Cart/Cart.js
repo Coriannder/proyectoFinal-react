@@ -1,5 +1,5 @@
 import './Cart.scss'
-import { useContext, useState } from 'react'
+import { useContext, useState} from 'react'
 import { CartContext } from '../../Context/CartContext'
 import { CartItemList } from '../CartItemList/CartItemList'
 import { NavLink } from 'react-router-dom'
@@ -9,30 +9,23 @@ import Swal from 'sweetalert2'
 
 export const Cart = ()=>{
 
-    const [isDisplayVisible, setIsDisplayVisible] = useState(false)
+    const [isDisplayVisible, setIsDisplayVisible] = useState(false)    // Variable para hacer visible CartForm
     const contextValue = useContext(CartContext)
     const cartItems = useContext(CartContext).cartItems
-
-
+    
     const terminarCompraFunction = () =>{
-
-        console.log('cartItems',cartItems)
-        
 
         if(cartItems.length !== 0){
             setIsDisplayVisible(true)
-            console.log('lleno')
         }else{
             Swal.fire({
                 icon: 'error',
                 title: 'El Carrito esta vacio', 
             })
-        console.log('vacio')
         }
     }
 
-
-
+    
     return(
 
         <div className='cart'>
@@ -47,12 +40,12 @@ export const Cart = ()=>{
 
                         <div className='row cart__totalContainer'>
 
-                            <div className='col-4 cart__total' >
+                            <div className='col-6 cart__total' >
 
                                         <button className='cart__button' onClick={()=>contextValue.clear()} ><strong>Vaciar Carrito</strong></button>  
                             </div>
 
-                            <div className='col-4 cart__total'>
+                            <div className='col-2 cart__total'>
                                 Total
                             </div>
 
@@ -79,16 +72,6 @@ export const Cart = ()=>{
              </div>
 
             <CartForm isDisplayVisible={isDisplayVisible} setIsDisplayVisible={setIsDisplayVisible} contextValue={contextValue} />
-            {console.log(isDisplayVisible)}
-
         </div>
-
-        
-
-
-
-        
     )
-
-
 }

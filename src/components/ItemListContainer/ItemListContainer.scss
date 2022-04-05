@@ -5,8 +5,18 @@
     background-color: whitesmoke;
     color: azure;
     font-size: larger;
+
+    &__titulo{
+        color: black;
+    }
 }
 
-.itemListContainer_titulo{
-    color: black;
-}
+
+@media (max-width: 800px) {
+    
+    .itemListContainer{
+        margin: 0;
+        margin-top: 70px;
+        padding: 0;
+    }
+  }

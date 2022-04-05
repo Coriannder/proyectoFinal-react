@@ -1,3 +1,7 @@
+# Isla Gourmet
+
+Este proyecto fue realizado en el marco del curso de React de [Coder House]{https://www.coderhouse.com/} 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

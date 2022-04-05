@@ -2,58 +2,78 @@
 .itemCount{
     color: black;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &--off{
         display: none;
     }
-}
 
-.itemCount__cantidad{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid black;
-    margin-bottom: 10px;
-    
-    
-}
+    &__cantidad{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid black;
+        margin-bottom: 10px;
+        width: 240px; 
+    }
 
-.itemCount__producto{
-    height: 60%;
-}
+    &__producto{
+        height: 60%;
+    }
 
+    &__btnAgregar{
+        width: 100%;
+        min-width: 240px;
+        border: 1px solid black;
+        
+        &:hover{
+            background-color: rgb(5, 199, 5);
+            color: white;
+        }
 
+        &--off{
+            min-width: 240px;
+            width: 100%;
+            border: 1px solid black;
+        }
+    }
 
-.itemCount__btnAgregar{
-    width: 100%;
-    border: 1px solid black;
-    
-    
-    &:hover{
-        background-color: rgb(5, 199, 5);
-        color: white;
+    &__btnCantidad{
+        width: 30%;
+        background-color: transparent;
+        border: transparent;
+
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+
+        &--off{
+            width: 30%;
+            background-color: transparent;
+            border: transparent;
+        }
     }
 }
-.itemCount__btnAgregar--off{
-    width: 100%;
-    border: 1px solid black;
-    
-    
-}
 
 
-.itemCount__btnCantidad{
-    width: 30%;
-    background-color: transparent;
-    border: transparent;
-    &:hover{
-        background-color: black;
-        color: white;
+@media (max-width: 778px) {
+
+    .itemCount{
+        &__cantidad{
+            margin: auto;  
+        }
+
+        &__btnAgregar{
+            max-width: 240px;
+            margin: 10px auto;
+    
+            &--off{
+                max-width: 240px;
+                margin: 10px auto;
+            }
+        }
     }
-}
-
-.itemCount__btnCantidad--off{
-    width: 30%;
-    background-color: transparent;
-    border: transparent;
 }
