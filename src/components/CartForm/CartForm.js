@@ -22,26 +22,25 @@ export const CartForm = ({contextValue, isDisplayVisible})=>{
     const handlerSubmit = (e) => {
 
         e.preventDefault()
-        if(buyer.name !== "" && buyer.lastName !== "" && buyer.email !== "" && buyer.phone !== ""){  // Verifica que los campos no esten vacios
-
+        if( buyer.name !== "" && buyer.lastName !== "" && buyer.email !== "" && buyer.phone !== "" ){  // Verifica que los campos no esten vacios
             const order = {buyer, cartItems, total,  date: Timestamp.fromDate(new Date())}
             generateOrder(order).then(result =>{
                 contextValue.clear()
                 updateStock(cartItems)
             })
-            
+
         } else{
             Swal.fire({                  // Alerta de libreria Sweet Alert 2
                 icon: 'error',
                 title: 'Error',
                 text: handlerError(),
-              })
+            })
         }
     }
 
     const handlerError = () =>{
         let text = '';
-        if(buyer.name === ''){text += ' El campo Nombre esta vacio '}
+        if(buyer.name === ''){text += ' El campo Nombre esta vacio'}
         if(buyer.lastName === ''){text += 'El campo Apellido esta vacio '}
         if(buyer.phone === ''){text += 'El campo Telefono esta vacio '}
         if(buyer.email === ''){text += 'El campo email esta vacio '}
@@ -49,12 +48,27 @@ export const CartForm = ({contextValue, isDisplayVisible})=>{
         return(text)
     }
 
-    const handlerChange = (e) => {
-        setBuyer({...buyer, [e.target.name] : e.target.value})
+    const handlerKeyPress = (e) => {
+
+        if(e.target.name === 'phone'){
+            if(isNaN(e.key)){
+                e.preventDefault()
+            }else{
+                setBuyer({...buyer, [e.target.name] : e.target.value})
+                console.log(e.target.value)
+            }
+        }else{
+            console.log(isNaN(e.key))
+            if(!isNaN(e.key)){
+                e.preventDefault()
+            }else{
+                setBuyer({...buyer, [e.target.name] : e.target.value})
+                console.log(e.target.value)
+            }
+        }
     }
 
     return(
-    
         <div className="container cartForm__container" style={{display: isDisplayVisible? 'block':'none' }}>
 
                 <form className="cartForm">
@@ -62,19 +76,19 @@ export const CartForm = ({contextValue, isDisplayVisible})=>{
                     <p>Para terminar tu compra ingresa tus datos</p>
 
                     <div className="mb-3" >
-                        <input type="text" className="form-control" name="name" placeholder='Nombre' onChange={handlerChange}></input>
+                        <input type="text" className="form-control"  name="name" placeholder='Nombre' onKeyPress={handlerKeyPress}></input>
                     </div>
 
                     <div className="mb-3" >
-                        <input type="text" className="form-control" name="lastName" placeholder='Apellido' onChange={handlerChange} ></input>
+                        <input type="text" className="form-control" name="lastName" placeholder='Apellido' onKeyPress={handlerKeyPress} ></input>
                     </div>
 
                     <div className="mb-3">
-                        <input type="email" className="form-control" name="email" placeholder='email' onChange={handlerChange} ></input>
+                        <input type="email" className="form-control" name="email" placeholder='email' onKeyPress={handlerKeyPress} ></input>
                     </div>
 
                     <div className="mb-3">
-                        <input type="number" className="form-control" name="phone" placeholder='Telefono' onChange={handlerChange} ></input>
+                        <input type="number" className="form-control" name="phone" placeholder='Telefono' onKeyPress={handlerKeyPress} ></input>
                     </div>
 
                     <button type="submit" className="btn btn-primary" onClick={handlerSubmit}>Comprar</button>

@@ -14,10 +14,9 @@ export const CartWidget = () => {
         <NavLink to={'/cart'} className="nav-link">
             <div className="cartWidget__container">
                 <img src= {carritoImg} alt=""/>
-                {cantidad > 0?
+                {cantidad > 0 &&
                     <div className='cartWidget__circuloRojo'>{cantidad}</div>
-                    :
-                    '' }
+                }
                 
             </div>
         </NavLink>

@@ -14,10 +14,7 @@ import {CartProvider} from './Context/CartContext'
 function App() {
 
   return (
-
-
     <CartProvider>
-
         <BrowserRouter>
 
             <header>
@@ -26,11 +23,11 @@ function App() {
 
             <Routes>
               <Route path='/' element={<ItemListContainer greeting = 'Catalogo'/>}/>
-              <Route path='/Item/:Id' element={<ItemDetailContainer/>}/>         
+              <Route path='/Item/:Id' element={<ItemDetailContainer/>}/>
               <Route path='/category/:categoryId' element={<ItemListContainer greeting = 'Catalogo'/>}/>
               <Route path='/cart' element={<Cart/>}/>
             </Routes>
-          
+
         </BrowserRouter>
 
     </CartProvider>

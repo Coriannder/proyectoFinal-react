@@ -4,13 +4,13 @@ import logo from "./img/logo.jpg"
 import { CartWidget } from "../CartWidget/CartWidget";
 import {NavLink} from 'react-router-dom'
 
-const NavBar = () =>{ 
+const NavBar = () =>{
     return(
         <nav className="navbar fixed-top navbar-expand-md navbar-dark bg-dark header__colorBackground">
             <div id="barraNav" className="container-fluid">
 
               <NavLink to={`/`}
-                className="navbar-brand" href=""><img src={logo} 
+                className="navbar-brand" href=""><img src={logo}
                 alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
                   <h1>Isla Gourmet</h1>
               </NavLink>
@@ -19,7 +19,7 @@ const NavBar = () =>{
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div className="collapse navbar-collapse" id="navbarNavDropdown">
-              
+
                 <ul className="navbar-nav">
                   <li className="nav-item">
                     <NavLink
@@ -37,8 +37,7 @@ const NavBar = () =>{
                 <CartWidget/>
                 
               </div>
-              
-              
+
             </div>
         </nav>
     )

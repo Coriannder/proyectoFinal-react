@@ -63,10 +63,10 @@ export const Cart = ()=>{
                 <div className='row cart__btnContainer'>
 
                     <NavLink to={'/'} style={{width:'auto'}}>
-                    <button className='cart__button'>Seguir Comprando</button>
+                    <button className='cart__button cart__button--seguirComprando'>Seguir Comprando</button>
                     </NavLink>
 
-                    <button className='cart__button' onClick = {()=>terminarCompraFunction()} >Terminar compra</button>
+                    <button className='cart__button cart__button--finalizarCompra' onClick = {()=>terminarCompraFunction()} >Terminar compra</button>
 
                 </div>
              </div>

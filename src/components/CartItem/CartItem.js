@@ -22,6 +22,6 @@ export const CartItem = ({cartProduct})=>{
                 <CartItemCount product={cartProduct}/>
             </div>
   
-        </div> 
+        </div>
     )
 }

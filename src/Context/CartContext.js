@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
+//import { useEffect } from "react";
 
 
 export const CartContext = React.createContext();
@@ -18,12 +18,12 @@ export const CartProvider = ({children})=>{
         const index = cartItems.map(element=> element.item.id).indexOf(item.id)  //indice donde se encuentra el item a actualizar
         cartItems[index].cantidad += cantidad  // agrego nuevas cantidades
     }
-    
+
     const addItem = (item, cantidad) =>{   // Funcion que agrega un item al carrito
 
         setCantidadTotal(cantidadTotal + cantidad)
         setTotal(total + item.price * cantidad)
-        
+
         if(isInCartItems(item)){
             upDateCantidad(item, cantidad)
         }else{
@@ -41,10 +41,10 @@ export const CartProvider = ({children})=>{
         setTotal(0)
     }
 
-    useEffect(()=>{
+    /* useEffect(()=>{
         setCantidadTotal(cartItems.map(element=>element.cantidad).reduce((a,b)=> a + b, 0))  // CAntidad total de items del carrito
         setTotal(cartItems.map(element => element.cantidad * element.item.price).reduce((a,b)=> a + b, 0)) // Precio total del carrito
-    },[])
+    },[]) */
 
 
     return(

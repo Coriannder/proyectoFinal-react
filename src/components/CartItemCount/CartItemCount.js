@@ -58,12 +58,11 @@ export const CartItemCount =({product})=>{
 
                 </div>
 
-            </div>           
+            </div>
 
             <div className='col-6 align cartItemCount__price'>
                 ${price}
             </div>
         </div>
-        
     )
 }

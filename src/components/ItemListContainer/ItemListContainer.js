@@ -8,13 +8,13 @@ import { db } from '../../utils/Firebase'
 
 export const ItemListContainer = ({greeting}) =>{
 
-    const [itemsFiltrado, setItemsFiltrado]=useState([])
+    const [itemsFiltrado, setItemsFiltrado] = useState([])
     const {categoryId} = useParams();
 
     useEffect(()=>{
         const getItems = async()=>{
             let q;
-            categoryId !== undefined?
+            categoryId !== undefined ?
                 q = query(collection(db, 'items'), where('category', '==', categoryId))
                 :
                 q = collection(db, 'items');
@@ -30,7 +30,7 @@ export const ItemListContainer = ({greeting}) =>{
                 <div className='itemListContainer__titulo'>
                     {greeting}
                 </div>
-                <ItemList items={itemsFiltrado}/>       
+                <ItemList items={itemsFiltrado}/>
         </div>
     )
 }

@@ -11,7 +11,7 @@ export const ItemCount = ({stock, onAdd})=>{
     const [cantidad, setCantidad] = useState()
     
 
-    const sumar = ()=>{
+    const sumar = () => {
         setCantidad(cantidad+1);
 
     }
@@ -21,7 +21,7 @@ export const ItemCount = ({stock, onAdd})=>{
 
     useEffect(()=>{    // Si no hay Stock, cantidad es igual a 0 y botones '+' y '-' quedan bloqueados
                
-        stock === undefined 
+        stock === undefined
             ?
             setCantidad(1)
             :

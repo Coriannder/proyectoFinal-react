@@ -6,11 +6,10 @@ export const ItemList = ({items})=>{
     return(
 
         <div className='itemList'>
-            {items.map((item) => 
+            {items.map((item) =>
                     <Item {...item}
                         key={item.id}
                         />
             )}
-            
         </div>
     )}
