@@ -12,17 +12,19 @@ export const ItemListContainer = ({greeting}) =>{
     const {categoryId} = useParams();
 
     useEffect(()=>{
-        const getItems = async()=>{
+        const getItems = async ()=>{
             let q;
-            categoryId !== undefined ?
-                q = query(collection(db, 'items'), where('category', '==', categoryId))
+            categoryId ?
+                q = await query(collection(db, 'items'), where('category', '==', categoryId))
                 :
                 q = collection(db, 'items');
             const response = await getDocs(q);
             const data = response.docs.map(doc=>doc.data());
             return data
         }
-        getItems().then(res=>{setItemsFiltrado(res)})
+        getItems().then(res=>{
+            setItemsFiltrado(res)
+        })
     },[categoryId])
 
     return(
